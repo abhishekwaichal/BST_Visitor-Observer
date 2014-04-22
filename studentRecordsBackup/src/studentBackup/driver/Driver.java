@@ -28,7 +28,7 @@ public class Driver {
 	 * @param args String
 	 */
 	public static void main(String[] args) {
-		debugValue = 0;
+		debugValue = 1;
 
 		Debug.setDebugValue(debugValue);
 
