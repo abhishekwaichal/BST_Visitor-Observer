@@ -1,0 +1,72 @@
+
+<project name="studentRecordsBackup" default="compile" basedir=".">
+
+	<property name="build.compiler"              value="modern"/>
+	<property name="src"                  value="src"/>
+	<property name="BUILD"                value="build"/>
+	<property name="javadoc"             value="javadoc"/>
+	<property name="classes"              value="${BUILD}/classes"/>
+
+
+	<target name="compile"
+          depends="studentRecordsBackup"/>
+
+	<target name="clean">
+		<delete dir="${BUILD}"/>
+	</target>
+
+	<!-- Prepare target directories -->
+	<target name="prepare">
+		<mkdir dir="${BUILD}"/>
+		<mkdir dir="${classes}"/>
+		<mkdir dir="${javadoc}"/>
+	</target>
+
+
+	<!-- ** means all subdirectories as well -->
+	<!-- * means all files in the current directory -->
+	<!-- for just java files use *.java -->
+
+	<target name="studentRecordsBackup" depends="prepare">
+		<javac srcdir="${src}"
+           includes="studentBackup/**"
+           excludes="**/package.html"
+           destdir="${classes}"
+           classpath="${classes}"
+           debug="on"
+           optimize="on"
+           deprecation="off"/>
+	</target>
+
+	<target name="jar">
+		<mkdir dir="${BUILD}/jar"/>
+		<jar destfile="${BUILD}/jar/studentRecordsBackup.jar" basedir="${BUILD}/classes">
+			<manifest>
+				<attribute name="Main-Class" value="studentBackup.driver.Driver"/>
+			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="run" depends="jar">
+		<java jar="${BUILD}/jar/studentRecordsBackup.jar"  fork="true">
+			<arg value="bstInput.txt"/>
+			<arg value="3"/>
+		</java>
+	</target>
+
+	<target name="purgeArchives" depends="clean">
+		<delete file="./studentRecordsBackup.tar" />
+		<delete file="./studentRecordsBackup.tar.gz" />
+	</target>
+
+	<target name="tarzip" depends="purgeArchives">
+		<tar destfile="./studentRecordsBackup.tar" basedir="." />
+		<gzip destfile="./studentRecordsBackup.tar.gz" src="./studentRecordsBackup.tar"/>
+		<delete file="./studentRecordsBackup.tar" />
+	</target>
+	
+	<target name="javadoc" depends="prepare" description="generate documentation">
+		<javadoc sourcepath="${src}" destdir="${javadoc}"/>
+	</target>
+</project>

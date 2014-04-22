@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.PRIVATE_MEMBER"/>
+<fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
+<fullyQualifiedTypeName name="studentBackup.visitor.TreeVisitor"/>
+<fullyQualifiedTypeName name="studentBackup.visitor.AddNodes"/>
+<fullyQualifiedTypeName name="studentBackup.visitor.UpdateNodes"/>
+<fullyQualifiedTypeName name="studentBackup.driver.Debug"/>
+<fullyQualifiedTypeName name="java.util.Observable"/>
+<fullyQualifiedTypeName name="studentBackup.driver.Driver"/>
+<fullyQualifiedTypeName name="studentBackup.test.ObserverTree"/>
+<fullyQualifiedTypeName name="java.util.Observer"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="studentBackup.util.BSTBuilder"/>
+<fullyQualifiedTypeName name="studentBackup.bst.Node"/>
+<fullyQualifiedTypeName name="studentBackup.visitor.addVisitor"/>
+<fullyQualifiedTypeName name="studentBackup.visitor.UpdateVisitor"/>
+<fullyQualifiedTypeName name="studentBackup.bst.BST"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="studentBackup.visitor.Visitor"/>
+</qualifiedTypeNameHistroy>
